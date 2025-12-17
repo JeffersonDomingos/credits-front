@@ -6,7 +6,7 @@ import { initFlowbite } from 'flowbite';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, CreditConsultationComponent],
+  imports: [CreditConsultationComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })
