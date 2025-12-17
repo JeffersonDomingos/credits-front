@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CreditConsultationComponent } from './app/credit-consultation/credit-consultation.component';
+import { CreditConsultationComponent } from './credit-consultation/credit-consultation.component';
+import { initFlowbite } from 'flowbite';
+
 
 @Component({
   selector: 'app-root',
@@ -10,4 +12,8 @@ import { CreditConsultationComponent } from './app/credit-consultation/credit-co
 })
 export class AppComponent {
   title = 'credits-front';
+
+  ngOnInit(): void {
+    initFlowbite();
+  }
 }
