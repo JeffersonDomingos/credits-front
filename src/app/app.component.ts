@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { CreditConsultationComponent } from './credit-consultation/credit-consultation.component';
+import { CreditConsultationComponent } from './pages/credit-consultation/credit-consultation.component';
 import { initFlowbite } from 'flowbite';
 
 
