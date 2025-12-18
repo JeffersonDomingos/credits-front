@@ -6,3 +6,9 @@
 
 /* input.css */
 @custom-variant dark (&:where(.dark, .dark *));
+
+html,
+body {
+  background-color: #ffffff;
+  min-height: 100%;
+}
