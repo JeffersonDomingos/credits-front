@@ -1,59 +1,144 @@
-# CreditsFront
+💳 Credits Frontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.19.
+Aplicação **front-end em Angular** desenvolvida para consumo da **API de Consulta de Créditos**, permitindo buscas por **Número da NFS-e** ou **Número do Crédito**, conforme especificação do desafio técnico.
 
-## Development server
+---
 
-To start a local development server, run:
+🧾 Visão Geral
 
-```bash
-ng serve
+O projeto disponibiliza uma interface web moderna e responsiva para consulta de créditos constituídos, consumindo endpoints REST expostos pelo back-end.
+
+Funcionalidades
+- 🔍 Consulta por **Número da NFS-e**
+- 🔎 Consulta por **Número do Crédito**
+- 📊 Exibição dos resultados em tabela
+- ⏳ Indicador de carregamento (loading)
+- ❌ Tratamento de erros e mensagens amigáveis
+- 📱 Layout responsivo
+- 🎨 UI baseada em **Tailwind CSS + Flowbite**
+
+---
+
+🛠️ Tecnologias Utilizadas
+
+- **Angular 19+**
+- **TypeScript**
+- **Tailwind CSS**
+- **Flowbite**
+- **RxJS**
+- **Docker**
+- **Nginx** (para servir o build em produção)
+
+---
+
+📁 Estrutura do Projeto
+
+```text
+src/
+ ├── app/
+ │   ├── core/
+ │   │   ├── models/
+ │   │   │   └── credito.model.ts
+ │   │   └── services/
+ │   │       └── credito.service.ts
+ │   ├── pages/
+ │   │   └── credit-consultation/
+ │   │       ├── credit-consultation.component.ts
+ │   │       ├── credit-consultation.component.html
+ │   │       └── credit-consultation.component.scss
+ │   ├── app.component.ts
+ │   ├── app.component.html
+ │   └── app.routes.ts
+ ├── styles.scss
+ └── main.ts
 ```
+� Integração com a API
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+O front consome os seguintes endpoints:
 
-## Code scaffolding
+GET /api/creditos/{numeroNfse}
+Retorna uma lista de créditos.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Consulta por Número do Crédito
+GET /api/creditos/credito/{numeroCredito}
 
-```bash
-ng generate component component-name
-```
+▶️ Executando o Projeto Localmente (Modo Desenvolvimento)
+Pré-requisitos
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Node.js 18+ (recomendado Node 20)
+Angular CLI
 
-```bash
-ng generate --help
-```
+    npm install
+    ng serve
 
-## Building
+A aplicação ficará disponível em:
 
-To build the project run:
+    http://localhost:4200
+    
+  ℹ️ Em modo desenvolvimento (ng serve), as alterações no código são refletidas automaticamente.
 
-```bash
-ng build
-```
+🐳 Executando com Docker (Produção)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Build e execução
 
-## Running unit tests
+    docker compose up -d --build
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+A aplicação será servida via Nginx em:
 
-```bash
-ng test
-```
+    http://localhost:4200
 
-## Running end-to-end tests
+Observações importantes
 
-For end-to-end (e2e) testing, run:
+O Docker não utiliza ng serve
 
-```bash
-ng e2e
-```
+O Angular é buildado via npm run build
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+O Nginx serve os arquivos estáticos gerados em /dist
 
-## Additional Resources
+Para forçar rebuild sem cache:
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+    docker compose down
+    docker compose build --no-cache
+    docker compose up -d
+
+🎨 Interface e UX
+
+-Inputs e botões estilizados com Flowbite
+-Tema escuro com fundo #24292e
+-Loading animado durante requisições
+
+-Estados bem definidos:
+carregando
+erro
+sem resultados
+sucesso
+
+✅ Boas Práticas Aplicadas
+
+Separação de responsabilidades (Component / Service / Model)
+
+Tipagem forte com TypeScript
+
+Uso de Observables (RxJS)
+
+Componentes standalone
+
+Código limpo e organizado
+
+Layout responsivo
+
+📌 Considerações Finais
+
+Este front-end foi desenvolvido seguindo as especificações do desafio técnico, priorizando:
+
+Clareza
+
+Manutenibilidade
+
+Boa experiência do usuário
+
+Integração correta com a API
+
+👤 Autor: Jefferson Morais
+📌 Projeto: Credits Frontend
+🚀 Stack: Angular | Tailwind | Flowbite | Docker
