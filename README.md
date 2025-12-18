@@ -101,18 +101,6 @@ Para forçar rebuild sem cache:
     docker compose build --no-cache
     docker compose up -d
 
-🎨 Interface e UX
-
--Inputs e botões estilizados com Flowbite
--Tema escuro com fundo #24292e
--Loading animado durante requisições
-
--Estados bem definidos:
-carregando
-erro
-sem resultados
-sucesso
-
 ✅ Boas Práticas Aplicadas
 
 Separação de responsabilidades (Component / Service / Model)
