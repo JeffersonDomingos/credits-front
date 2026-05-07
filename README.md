@@ -1,4 +1,4 @@
-💳 Credits Frontend
+💳 Credits Frontend Teste develop
 
 Aplicação **front-end em Angular** desenvolvida para consumo da **API de Consulta de Créditos**, permitindo buscas por **Número da NFS-e** ou **Número do Crédito**, conforme especificação do desafio técnico.
 
@@ -100,18 +100,6 @@ Para forçar rebuild sem cache:
     docker compose down
     docker compose build --no-cache
     docker compose up -d
-
-🎨 Interface e UX
-
--Inputs e botões estilizados com Flowbite
--Tema escuro com fundo #24292e
--Loading animado durante requisições
-
--Estados bem definidos:
-carregando
-erro
-sem resultados
-sucesso
 
 ✅ Boas Práticas Aplicadas
 
